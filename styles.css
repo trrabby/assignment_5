@@ -1,7 +1,9 @@
 *{
     color: black;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 .inputField{
     background-color: white;
     padding-left: 20px;
@@ -29,3 +31,10 @@
     padding: 5px 50px;
     text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .table-data td{
+        padding: 5px;
+        
+    }
+  }

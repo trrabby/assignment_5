@@ -1,0 +1,30 @@
+*{
+    color: black;
+}
+
+.inputField{
+    background-color: white;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid darkgrey;
+    border-radius: 7px;
+}
+.table-data{
+    border-bottom: 2px dashed gray;
+}
+
+.table-data th{
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px dashed gray;
+}
+/* .table-data tr{
+    border-bottom: 2px dashed gray;
+} */
+.table-data td{
+    width: fit-content;
+    
+    padding: 5px 50px;
+    text-align: center;
+}

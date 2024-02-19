@@ -177,14 +177,13 @@ text2.addEventListener('keyup', function(e){
     const value= getInputValueById('inputField')
     console.log(typeof value)
 
-    if( typeof value=== 'string' && typeof value2 === 'number'){
+    if( typeof value === 'string' && typeof value2 === 'number'){
         removeAttributeById('next-button')
     }
 
     else{
         alert('Insert Your Name and Number to Proceed')
     }
-
 
 })
 

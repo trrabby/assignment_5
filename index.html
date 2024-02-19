@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Smart Ticketing Service</title>
+    <link rel="shortcut icon" href="images/bus-logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,7 +36,8 @@
         <!-- banner section -->
         <section class="container mx-auto">
             <div
-                class="bg-[url('images/banner.png')] w-10/12 mx-auto lg:w-full h-screen bg-no-repeat bg-center bg-cover flex flex-col items-center justify-center space-y-6">
+                class="bg-[url('images/banner.png')] w-10/12 mx-auto lg:w-full h-screen bg-no-repeat 
+                lg:bg-contain bg-center flex flex-col items-center justify-center space-y-6">
                 <h1 class="text-center lg:text-6xl text-white font-bold">End-to-End Travel with <br>
                     <span class="text-green-500 text-center">P Paribahan</span>
                 </h1>
@@ -106,10 +108,10 @@
                                 </div>
                             </div>
                             <div>
-                                <p class="px-5 lg:px-3 py-2 rounded-xl flex gap-2 text-green-500
-                                text-xs lg:text-xl items-center justify-center bg-[#dff5f0]">
+                                <p class="px-5 lg:px-10 py-2 rounded-xl flex gap-2 text-green-500
+                                    text-xs lg:text-xl items-center justify-center bg-[#dff5f0]">
                                     <img src="images/bus-icon.png" alt="bus-icon">
-                                    <span class="text-green-500">30</span><span class="hidden lg:flex text-green-500">Seats</span>Left
+                                    <span class="text-green-500" id="total-seat-count">30</span><span class="hidden lg:flex text-green-500">Seats Left</span>
                                 </p>
                             </div>
                         </div>
@@ -204,58 +206,58 @@
                                 <span>J</span>
                             </div>
                             <!-- Seat -->
-                            <div class="flex gap-3 lg:gap-20">
+                            <div id="seats" class="flex gap-3 lg:gap-20">
                                 <!-- A Col -->
                                 <div class="flex flex-col  gap-3 lg:gap-6">
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">A1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">B1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">C1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">D1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">E1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">F1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">G1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">H1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">I1</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">J1</span>
+                                    <h6 id="A1" class="px-3 py-1  bg-slate-200 rounded-lg">A1</h6>
+                                    <h6 id="B1" class="px-3 py-1  bg-slate-200 rounded-lg">B1</h6>
+                                    <h6 id="C1" class="px-3 py-1  bg-slate-200 rounded-lg">C1</h6>
+                                    <h6 id="D1" class="px-3 py-1  bg-slate-200 rounded-lg">D1</h6>
+                                    <h6 id="E1" class="px-3 py-1  bg-slate-200 rounded-lg">E1</h6>
+                                    <h6 id="F1" class="px-3 py-1  bg-slate-200 rounded-lg">F1</h6>
+                                    <h6 id="G1" class="px-3 py-1  bg-slate-200 rounded-lg">G1</h6>
+                                    <h6 id="H1" class="px-3 py-1  bg-slate-200 rounded-lg">H1</h6>
+                                    <h6 id="I1" class="px-3 py-1  bg-slate-200 rounded-lg">I1</h6>
+                                    <h6 id="J1" class="px-3 py-1  bg-slate-200 rounded-lg">J1</h6>
                                 </div>
                                 <!-- B col -->
                                 <div class="flex flex-col  gap-3 lg:gap-6">
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">A2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">B2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">C2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">D2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">E2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">F2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">G2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">H2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">I2</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">J2</span>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">A2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">B2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">C2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">D2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">E2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">F2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">G2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">H2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">I2</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">J2</h6>
                                 </div>
                                 <!-- C Col -->
                                 <div class="flex flex-col  gap-3 lg:gap-6">
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">A3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">B3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">C3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">D3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">E3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">F3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">G3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">H3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">I3</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">J3</span>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">A3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">B3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">C3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">D3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">E3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">F3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">G3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">H3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">I3</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">J3</h6>
                                 </div>
                                 <!-- D Col -->
                                 <div class="flex flex-col  gap-3 lg:gap-6">
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">A4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">B4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">C4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">D4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">E4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">F4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">G4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">H4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">I4</span>
-                                    <span class="px-3 py-1  bg-slate-200 rounded-lg">J4</span>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">A4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">B4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">C4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">D4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">E4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">F4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">G4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">H4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">I4</h6>
+                                    <h6 class="px-3 py-1  bg-slate-200 rounded-lg">J4</h6>
                                 </div>
                             </div>
 
@@ -275,41 +277,40 @@
                         <!-- calculation -->
                         <div class="w-10/12 lg:w-11/12 mx-auto space-y-1 flex lg:flex-1 flex-col lg:mx-5 px-5 py-5 bg-slate-200 rounded-2xl">
                             <div class="flex justify-between items-center lg:px-10 lg:py-3">
-                                <table class="table-data">
+                                <table id="table-data" class="table-data">
                                     <tr>
-                                        <th>Seat <span class="bg-green-500 px-2 rounded-lg">0</span></th>
+                                        <th>Seat <span class="bg-green-500 px-2 rounded-lg" id="seat-purchased">0</span></th>
                                         <th>Class</th>
                                         <th>Price</th>
                                     </tr>
-                                    <tr>
-                                        <td>C2</td>
-                                        <td>Economic</td>
-                                        <td>500</td>
-                                    </tr>
-
+                                    
                                 </table>
 
                             </div>
                            <div class="flex justify-between items-center px-10 py-3">
                                 <h1>Total Price</h1>
-                                <h1>0 bdt</h1>
+                                <p><span id="total-counter">0</span> &nbsp; bdt</p>
                             </div>
                             <!-- Coupon Sec -->
                             <div class="flex justify-between px-5 py-3 bg-white rounded-xl ">
-                                <input class="bg-white w-10/12 " type="text" name="" id="couponField"
+                                <input class="bg-white w-9/12 " type="text" name="" id="couponField"
                                     placeholder="Have any coupon?">
-                                <button class="btn btn-success bg-green-300">Apply</button>
+                                <button id="couponBtn" disabled onclick="discount()" class="btn btn-success bg-green-300">Apply</button>
                             </div>
+                            <div>
+                                <table id="discountDisplay" class="w-10/12 mx-auto">
 
+                                </table>
+                            </div>
                             <div class="flex justify-between items-center px-10 py-3">
                                 <h1>Grand Total</h1>
-                                <h1>0 bdt</h1>
+                                <h1><p id="grand-total">0</p> bdt</h1>
                             </div>
                         </div>
                         <!-- Address sec -->
                         <div class="flex flex-col gap-6 p-5">
                             <p>Passanger's Name*</p>
-                            <input required class="inputField" type="text" name="" id="" placeholder="Enter Your Name">
+                            <input required class="inputField" type="text" name="" id="name-field" placeholder="Enter Your Name">
 
                             <p>Phone Number*</p>
                             <input required class="inputField" type="number" name="" id=""
@@ -396,7 +397,7 @@
         </div>
             
     </footer>
-
+    <script src="app.js"></script>
     <script src="script.js"></script>
 </body>
 

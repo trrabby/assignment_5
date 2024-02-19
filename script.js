@@ -2,7 +2,8 @@ const seats = document.getElementsByTagName('h6')
 let total=0;
 const trArray=[];
 let seatPurchased=1;
-let seatCapacity=29;
+let seatCapacity=39;
+const seatArray=[];
 
 for (const seat of seats){
     seat.addEventListener('mouseover', function(){
@@ -29,12 +30,14 @@ for (const seat of seats){
 
         const calculatorDisplay= document.getElementById('table-data')
         // console.log(calculatorDisplay)
-        trArray.push(tr)
-        if ( trArray.length<=4){
+
+        if ( trArray.length<4 && seatArray.includes(seat.innerText)===false){
+            trArray.push(tr)
             calculatorDisplay.appendChild(tr)
             const ticketPrice= 550;
             total+=ticketPrice;
-
+            seatArray.push(seat.innerText);
+            
             const totalPriceDisplay=document.getElementById('total-counter');
             totalPriceDisplay.innerText=total;
             this.style.backgroundColor='#82E0AA'
@@ -46,20 +49,23 @@ for (const seat of seats){
 
             const reducingTotalTicket= document.getElementById('total-seat-count')
             reducingTotalTicket.innerText= seatCapacity-- ;
-            
-
-
-            
+        
         }
+
+
+        
         else{
-            alert('You Can Not Buy More Than 4 Tickets ')
+                if(seatArray.includes(seat.innerText)===true){
+                    alert('You Can Buy A Ticket Once')
+                }
+
+                else{
+                    alert('You Can Not Buy More Than 4 Tickets ')
+                }
+         
         }
         
         
-
-        
-        
-        // console.log(trArray)
        
     })
 }
@@ -67,17 +73,25 @@ for (const seat of seats){
 document.getElementById('couponField').addEventListener('keyup', function(event){
     const text= event.target.value;
 
-    const value= text.split(' ').join('').toUpperCase()
+    const value= text
+    // .split(' ').join('').toUpperCase()
 
-    const couponBtn= document.getElementById('couponBtn');
+    // const couponBtn= document.getElementById('couponBtn');
 
-    if(value === 'NEW15' || value === 'COUPLE20'){
-        couponBtn.removeAttribute('disabled')
+    if(value === 'NEW15' || value === 'Couple 20'){
+        // couponBtn.removeAttribute('disabled')
+        removeAttributeById('couponBtn')
+        
     }
     else{
         couponBtn.setAttribute('disabled', true);
     }
 })
+
+document.getElementById('couponBtn').addEventListener('click', function(){
+    setClassNameById('coupon-div')
+})
+
 
 function discount(){
     
@@ -95,7 +109,7 @@ function discount(){
         const priceAfterDiscount= total-fifteenPercent;
         
         const td1=document.createElement('td')
-        td1.innerText='You Got Discount of tk:'
+        td1.innerText='You have saved tk:'
         const td2=document.createElement('td')
         td2.innerText=fifteenPercent;
         const td3=document.createElement('td')
@@ -118,7 +132,7 @@ function discount(){
           const priceAfterDiscount2= total-twentyPercent;
 
           const td1=document.createElement('td')
-        td1.innerText='You Got Discount of tk:'
+        td1.innerText='You have saved tk:'
         const td2=document.createElement('td')
         td2.innerText=twentyPercent;
         const td3=document.createElement('td')
@@ -140,8 +154,11 @@ function discount(){
     }
 }
 
-const value1= getInputValueById('name-field')
-console.log(value1)
+const valueInput=  getInputValueById('inputField')
+const value= valueInput.value
+console.log(value)
+
+
 
 
 

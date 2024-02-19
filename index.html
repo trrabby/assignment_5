@@ -61,7 +61,7 @@
                         </div>
                         <div><img class="h-full" src="images/cupon-devider.png" alt=""></div>
                         <div class="space-y-1 px-8 flex flex-col justify-center">
-                            <h1 class="text-3xl font-extrabold">NEW 15</h1>
+                            <h1 class="text-3xl font-extrabold">NEW15</h1>
                             <p class="text-lg font-bold">Coupon Code</p>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                 <p class="px-5 lg:px-10 py-2 rounded-xl flex gap-2 text-green-500
                                     text-xs lg:text-xl items-center justify-center bg-[#dff5f0]">
                                     <img src="images/bus-icon.png" alt="bus-icon">
-                                    <span class="text-green-500" id="total-seat-count">30</span><span class="hidden lg:flex text-green-500">Seats Left</span>
+                                    <span class="text-green-500" id="total-seat-count">40</span><span class="hidden lg:flex text-green-500">Seats Left</span>
                                 </p>
                             </div>
                         </div>
@@ -287,30 +287,42 @@
                                 </table>
 
                             </div>
-                           <div class="flex justify-between items-center px-10 py-3">
+                           <!-- <div class=" border-2 border-red-500 flex justify-between items-center text-center px-10 py-3">
                                 <h1>Total Price</h1>
                                 <p><span id="total-counter">0</span> &nbsp; bdt</p>
-                            </div>
+                            </div> -->
+
+                             <table class="table-data">
+                                <tr class="w-full">
+                                    <td>Total Price</td><td id="total-counter">0</td><td>bdt</td>
+                                </tr>
+                                
+                             </table>
+
                             <!-- Coupon Sec -->
-                            <div class="flex justify-between px-5 py-3 bg-white rounded-xl ">
+                            <div id="coupon-div" class="flex justify-between px-5 py-3 bg-white rounded-xl ">
                                 <input class="bg-white w-9/12 " type="text" name="" id="couponField"
                                     placeholder="Have any coupon?">
                                 <button id="couponBtn" disabled onclick="discount()" class="btn btn-success bg-green-300">Apply</button>
                             </div>
                             <div>
-                                <table id="discountDisplay" class="w-10/12 mx-auto">
-
+                                <table id="discountDisplay" class="table-data">
+                                    
                                 </table>
                             </div>
-                            <div class="flex justify-between items-center px-10 py-3">
+                            <!-- <div class="flex justify-between items-center px-10 py-3 w-full">
                                 <h1>Grand Total</h1>
-                                <h1><p id="grand-total">0</p> bdt</h1>
-                            </div>
+                                <p><span id="grand-total">0</span> &nbsp; <span>bdt</span></p>
+                            </div> -->
+                            <table class="table-data text-center">
+                                <td>Grand Total</td>
+                                <td id="grand-total">0</td><td>bdt</td>
+                            </table>
                         </div>
                         <!-- Address sec -->
                         <div class="flex flex-col gap-6 p-5">
                             <p>Passanger's Name*</p>
-                            <input required class="inputField" type="text" name="" id="name-field" placeholder="Enter Your Name">
+                            <input required class="inputField" type="text" id="inputField" placeholder="Enter Your Name">
 
                             <p>Phone Number*</p>
                             <input required class="inputField" type="number" name="" id=""
@@ -323,7 +335,7 @@
                             <!-- <button class="btn btn-success bg-green-300" disabled>Next</button> -->
                             <!-- Modal Button -->
                             <!-- Modal toggle -->
-                            <button data-modal-target="static-modal" data-modal-toggle="static-modal"
+                            <button disabled data-modal-target="static-modal" data-modal-toggle="static-modal"
                                 class="block text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                                 type="button">
                                 Next

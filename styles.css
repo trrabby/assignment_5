@@ -14,22 +14,24 @@ html{
     width: 100%;
 }
 .table-data{
-    border-bottom: 2px dashed gray;
+    border-bottom: 1px dotted gray;
     width: 100%;
+    text-align: left;
 }
 
 .table-data th, tr{
     
-    border-bottom: 2px dashed gray;
+    border-bottom: 1px dotted gray;
     padding: 5px 25px;
-    width: 20% ;
+    width: 100%;
     text-align: center;
 }
 
 .table-data td{
+    width: 100%;
     padding: 5px 25px;
     text-align: center;
-    border-bottom: 2px dashed gray;
+    border-bottom: 1px dotted gray;
 }
 
 @media only screen and (max-width: 600px) {

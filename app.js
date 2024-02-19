@@ -25,6 +25,6 @@ function setInnerTextById(textId, value){
 
 function getInputValueById(inputId){
     const inputField= document.getElementById(inputId)
-    const value= inputField
+    const value= inputField.value
     return value
 }

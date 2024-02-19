@@ -154,9 +154,43 @@ function discount(){
     }
 }
 
-const valueInput=  getInputValueById('inputField')
-const value= valueInput.value
-console.log(value)
+
+
+
+
+const text2= document.getElementById('number-field')
+// console.log(text2)
+text2.addEventListener('keyup', function(e){
+    const value2=parseInt(e.target.value)
+    console.log(typeof value2);
+    
+    // const inputField=  document.getElementById('inputField')
+    // inputField.addEventListener("keyup",function field1 (e){
+    //     value=e.target.value
+    //     console.log(value)
+    
+    //     if (typeof value === "string"){
+    //         removeAttributeById('next-button')
+    //     }
+    // })
+
+    const value= getInputValueById('inputField')
+    console.log(typeof value)
+
+    if( typeof value=== 'string' && typeof value2 === 'number'){
+        removeAttributeById('next-button')
+    }
+
+    else{
+        alert('Insert Your Name and Number to Proceed')
+    }
+
+
+})
+
+
+
+
 
 
 
